@@ -1,0 +1,19 @@
+{
+  "name": "flip-the-script",
+  "source": {
+    "source": "url",
+    "url": "https://github.com/88plug/flip-the-script.git"
+  },
+  "description": "Installs a standing self-distrust prior: the model treats its own unverified recall as stale and overconfident by default, and routes any version/API/current-state/exact-number/long-tail claim to external ground truth (docs, search, read-the-source, measure, or a fresh-context check) before asserting. UserPromptSubmit hook every turn, primed at SessionStart. Calibrated, not paralytic — quiet on stable well-known facts.",
+  "category": "productivity",
+  "tags": [
+    "type:plugin",
+    "guardrails",
+    "hallucination",
+    "verification",
+    "grounding",
+    "calibration",
+    "self-correction"
+  ],
+  "homepage": "https://github.com/88plug/flip-the-script"
+}

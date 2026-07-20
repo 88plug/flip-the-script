@@ -1,0 +1,28 @@
+site_name: Flip The Script
+site_description: 'A standing self-distrust prior — treats unverified recall as stale/overconfident and routes version/API/current-state/exact claims to external ground truth before asserting.'
+site_url: https://88plug.github.io/flip-the-script/
+repo_url: https://github.com/88plug/flip-the-script
+repo_name: 88plug/flip-the-script
+edit_uri: edit/main/docs/
+use_directory_urls: true
+theme:
+  name: material
+  features: [navigation.sections, navigation.top, navigation.instant, content.code.copy, search.suggest]
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle: {icon: material/weather-night, name: Switch to dark mode}
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle: {icon: material/weather-sunny, name: Switch to light mode}
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - def_list
+  - footnotes
+  - tables
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+  - toc: {permalink: true}

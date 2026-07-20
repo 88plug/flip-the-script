@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "flip-the-script",
+  "displayName": "Flip The Script",
+  "description": "Installs a standing self-distrust prior: the model treats its own unverified recall as stale and overconfident by default, and routes any version/API/current-state/exact-number/long-tail claim to EXTERNAL ground truth (docs, search, read-the-source, measure, or a fresh-context check) before asserting. Fires deterministically every turn via a UserPromptSubmit hook, primed once at SessionStart. Confidence is not evidence; internal second-guessing alone does not fix a wrong recall — the fix is external verification. Calibrated, not paralytic: distrusts hard where recall is unreliable, stays quiet on stable well-known facts.",
+  "author": {
+    "name": "88plug",
+    "email": "andrew@88plug.com"
+  },
+  "license": "FSL-1.1-ALv2",
+  "homepage": "https://github.com/88plug/flip-the-script",
+  "repository": "https://github.com/88plug/flip-the-script.git",
+  "keywords": [
+    "claude-code",
+    "claude",
+    "anthropic",
+    "ai",
+    "llm",
+    "ai-agents",
+    "developer-tools",
+    "productivity",
+    "automation",
+    "cli",
+    "claude-code-plugin",
+    "claude-skills",
+    "guardrails",
+    "hallucination",
+    "verification",
+    "grounding",
+    "instruction-following",
+    "self-correction",
+    "calibration",
+    "anti-drift"
+  ],
+
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          { "type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/prime.sh\"", "timeout": 10 }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          { "type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/nudge.sh\"", "timeout": 10 }
+        ]
+      }
+    ]
+  },
+
+  "skills": "./skills"
+}

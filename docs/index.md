@@ -1,10 +1,6 @@
-<div align="center">
+# Flip The Script
 
 **A standing self-distrust prior for Claude Code** — treats unverified recall as stale and overconfident, and routes any version/API/current-state/exact-number/long-tail claim to external ground truth before asserting.
-
-</div>
-
-# Flip The Script
 
 [![plugin-validate](https://github.com/88plug/flip-the-script/actions/workflows/plugin-validate.yml/badge.svg)](https://github.com/88plug/flip-the-script/actions/workflows/plugin-validate.yml)
 [![License: FSL-1.1-ALv2](https://img.shields.io/badge/license-FSL--1.1--ALv2-blue?style=flat)](https://github.com/88plug/flip-the-script/blob/main/LICENSE)
